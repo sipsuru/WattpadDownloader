@@ -48,6 +48,11 @@
         input_url = input_url.split("?")[0].split("/stories/")[1]; // removes params
         download_id = input_url;
         mode = "story";
+      } else if (input_url.includes("/list/")) {
+        // https://www.wattpad.com/list/953734831--winter-2021-stay-tuned-
+        input_url = input_url.split("-")[0].split("/list/")[1]; // removes tracking fields and title
+        download_id = input_url;
+        mode = "collection";
       } else {
         // https://www.wattpad.com/939051741-wattpad-books-presents-the-qb-bad-boy-and-me
         input_url = input_url.split("-")[0].split("wattpad.com/")[1]; // removes tracking fields and title
@@ -82,6 +87,7 @@
           </p>
           <ul class="pt-4 list list-inside text-xl">
             <!-- TODO: 'max-lg: hidden' to hide on screen sizes smaller than lg. I'll do this when I figure out how to make this show up _below_ the card on smaller screen sizes. -->
+            <li>11/24 - 📋 List Support!</li>
             <li>11/24 - 🔗 Paste Links!</li>
             <li>11/24 - 📨 Send to Kindle Support!</li>
 
