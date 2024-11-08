@@ -78,20 +78,18 @@ async def handle_download(
             case DownloadMode.collection:
                 return await download_list(download_id, download_images, cookies)
 
-    except ClientResponseError as exception:
-        if exception.status == 400:
-            # Invalid ID
-            return HTMLResponse(
-                status_code=400,
-                content='The item you tried to download does not exist or has been deleted. Support is available on the <a href="https://discord.gg/P9RHC4KCwd" target="_blank">Discord</a>',
-            )
-
-        if exception.status == 429:
-            # Rate-limit by Wattpad
-            return HTMLResponse(
-                status_code=429,
-                content='Unfortunately, the downloader got rate-limited by Wattpad. Please try again later. Support is available on the <a href="https://discord.gg/P9RHC4KCwd" target="_blank">Discord</a>',
-            )
+    except ClientResponseError:
+        # Rate-limit by Wattpad
+        return HTMLResponse(
+            status_code=429,
+            content='Unfortunately, the downloader got rate-limited by Wattpad. Please try again later. Support is available on the <a href="https://discord.gg/P9RHC4KCwd" target="_blank">Discord</a>',
+        )
+    except KeyError:
+        # Invalid ID
+        return HTMLResponse(
+            status_code=404,
+            content='The item you tried to download does not exist or has been deleted. Support is available on the <a href="https://discord.gg/P9RHC4KCwd" target="_blank">Discord</a>',
+        )
 
 
 async def download_story(story_id, download_images, cookies):
