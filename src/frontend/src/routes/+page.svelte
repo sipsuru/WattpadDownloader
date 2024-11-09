@@ -207,6 +207,14 @@
               >Started</span
             >
           </h1>
+          {#if mode=="collection"}
+            <div>
+              <h1 class="font-bold text-xl">
+                Please Note: Lists can take a LONG time to download. Please be
+                patient.
+              </h1>
+            </div>
+          {/if}
           <div class="py-4 space-y-2">
             <p class="text-2xl">
               If you found this site useful, please consider <a
