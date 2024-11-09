@@ -7,6 +7,9 @@ Straightforward, Extendable WebApp to download Wattpad Books as EPUB Files.
 
 Stars ⭐ are appreciated. Thanks!
 
+# This branch of WattpadDownloader supports list downloading.
+## We have decided not to merge this branch into `master` due to ratelimiting concerns
+
 ## Features
 - ⚡ Lightweight Frontend and Minimal Javascript.
 - 🪙 Supports Authentication (Download paid stories from your account!)
