@@ -1,3 +1,6 @@
+# This branch of WattpadDownloader supports list downloading.
+## We have decided not to merge this branch into `master` due to ratelimiting concerns
+
 WattpadDownloader ([Demo](https://wpd.rambhat.la))
 ---
 Straightforward, Extendable WebApp to download Wattpad Books as EPUB Files.
@@ -6,9 +9,6 @@ Straightforward, Extendable WebApp to download Wattpad Books as EPUB Files.
 
 
 Stars ⭐ are appreciated. Thanks!
-
-# This branch of WattpadDownloader supports list downloading.
-## We have decided not to merge this branch into `master` due to ratelimiting concerns
 
 ## Features
 - ⚡ Lightweight Frontend and Minimal Javascript.
@@ -19,12 +19,14 @@ Stars ⭐ are appreciated. Thanks!
 - 🏷️ Generated EPUB File includes Metadata. (Dublin Core Spec)
 - 📖 Plays well with E-Readers. (Kindle Support with Send2Kindle, ReMarkable, KOBO, KOReader...)
 - 💻 Easily Hackable. Extend with ease.
+- 📋 List downloading
 
 
 ## Set Up
 1. Clone the repository: `git clone https://github.com/TheOnlyWayUp/WattpadDownloader/ && cd WattpadDownloader`
-2. Build the image: `docker build . -t 'wp_downloader'` (This takes about 2 Minutes)
-3. Run the Container: `docker run -d -p 5042:80 wp_downloader`
+2. Checkout to the list downloading branch: `git checkout feature/#19-list-downloads`
+3. Build the image: `docker build . -t 'wp_downloader'` (This takes about 2 Minutes)
+4. Run the Container: `docker run -d -p 5042:80 wp_downloader`
 
 That's it! You can use your instance at `http://localhost:5042`. API Documentation is available at `http://localhost:5042/docs`.
 
