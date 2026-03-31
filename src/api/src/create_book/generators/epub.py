@@ -25,6 +25,7 @@ class EPUBGenerator(AbstractGenerator):
 
     def add_metadata(self):
         """Add metadata to epub."""
+        self.book.set_identifier(f"wpd_{self.story['id']}")
         self.book.add_author(self.story["user"]["username"])
 
         self.book.add_metadata("DC", "title", self.story["title"])
@@ -33,9 +34,8 @@ class EPUBGenerator(AbstractGenerator):
         self.book.add_metadata("DC", "modified", self.story["modifyDate"])
         self.book.add_metadata("DC", "language", self.story["language"]["name"])
 
-        self.book.add_metadata(
-            None, "meta", "", {"name": "tags", "content": ", ".join(self.story["tags"])}
-        )
+        for tag in self.story["tags"]:
+            self.book.add_metadata("DC", "subject", tag)
         self.book.add_metadata(
             None,
             "meta",
