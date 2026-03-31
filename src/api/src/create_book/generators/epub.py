@@ -79,7 +79,7 @@ class EPUBGenerator(AbstractGenerator):
 
                     img_tag["src"] = path
 
-            chapter.set_content(tree.prettify())
+            chapter.set_content(str(tree))
             self.book.add_item(chapter)
             chapters.append(chapter)
 
