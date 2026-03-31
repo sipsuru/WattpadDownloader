@@ -110,7 +110,7 @@
           >
             WP Downloader
           </h1>
-          <div role="alert" class="alert mt-10 max-w-md break-words bg-green-200">
+          <div role="alert" class="alert mt-10 max-w-md bg-green-200 break-words">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -156,6 +156,7 @@
             <!-- TODO: 'max-lg: hidden' to hide on screen sizes smaller than lg. I'll do this when I figure out how to make this show up _below_ the card on smaller screen sizes. -->
             <!-- <li>12/24 - ⚡ Super-fast Downloads!</li>
             <li>12/24 - 📑 PDF Downloads!</li> -->
+            <li>03/26 - ⚒️ Fix Tags & Broken italic/bold text</li>
             <li>05/25 - ⚖️ Legal Compliance</li>
             <li>12/24 - 📂 Less Errors, Throttled Downloads</li>
             <li>11/24 - 🔗 Paste Links!</li>
@@ -163,11 +164,13 @@
 
             <li>11/24 - ⚒️ Fix Image Downloads</li>
             <li>
-              10/24 - 👾 Add the <a
-                href="https://discord.com/oauth2/authorize?client_id=1292173380065296395&permissions=274878285888&scope=bot%20applications.commands"
-                target="_blank"
-                class="link underline">Discord Bot</a
-              >!
+              <strike
+                >10/24 - 👾 Add the <a
+                  href="https://discord.com/oauth2/authorize?client_id=1292173380065296395&permissions=274878285888&scope=bot%20applications.commands"
+                  target="_blank"
+                  class="link underline">Discord Bot</a
+                >!</strike
+              >
             </li>
             <li>07/24 - 🔡 RTL Language support! (Arabic, etc.)</li>
             <li>06/24 - 🔑 Authenticated Downloads!</li>
@@ -261,7 +264,9 @@
               </label> -->
 
               <label class="label cursor-pointer">
-                <span class="label-text text-gray-800">Include Images (<strong>Slower Download</strong>)</span>
+                <span class="label-text text-gray-800"
+                  >Include Images (<strong>Slower Download</strong>)</span
+                >
                 <input
                   type="checkbox"
                   class="checkbox-warning checkbox shadow-md"
@@ -320,7 +325,7 @@
 <dialog class="modal" bind:this={storyURLTutorialModal}>
   <div class="modal-box">
     <form method="dialog">
-      <button class="btn btn-circle btn-ghost btn-sm absolute right-2 top-2">✕</button>
+      <button class="btn btn-circle btn-ghost btn-sm absolute top-2 right-2">✕</button>
     </form>
     <h3 class="text-lg font-bold">How to get a Story URL</h3>
     <ol class="list list-inside list-disc space-y-4 py-4">
